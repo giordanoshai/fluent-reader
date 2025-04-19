@@ -205,6 +205,7 @@ export async function insertItems(items: RSSItem[]): Promise<RSSItem[]> {
         .exec()) as RSSItem[]
 }
 
+
 export function fetchItems(
     background = false,
     sids: number[] = null
@@ -273,6 +274,9 @@ export function fetchItems(
                                 }
                             }
                             if (inserted.length > 0) {
+                                const alertaudio = new Audio('./public/alert.mp3');
+                                alertaudio.play().catch(() => {
+                                    console.log("Audio play failed, probably due to autoplay policy.");})
                                 window.utils.requestAttention()
                             }
                         } else {

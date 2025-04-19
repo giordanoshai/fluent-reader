@@ -82,6 +82,7 @@ class AppTab extends React.Component<AppTabProps, AppTabState> {
 
     fetchIntervalOptions = (): IDropdownOption[] => [
         { key: 0, text: intl.get("app.never") },
+        { key: 1, text: intl.get("time.minute", { m: 1 }) },
         { key: 10, text: intl.get("time.minute", { m: 10 }) },
         { key: 15, text: intl.get("time.minute", { m: 15 }) },
         { key: 20, text: intl.get("time.minute", { m: 20 }) },

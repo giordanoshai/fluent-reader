@@ -138,6 +138,7 @@ class SourcesTab extends React.Component<SourcesTabProps, SourcesTabState> {
 
     fetchFrequencyOptions = (): IDropdownOption[] => [
         { key: "0", text: intl.get("sources.unlimited") },
+        { key: "1", text: intl.get("time.minute", { m: 1 }) },
         { key: "15", text: intl.get("time.minute", { m: 15 }) },
         { key: "30", text: intl.get("time.minute", { m: 30 }) },
         { key: "60", text: intl.get("time.hour", { h: 1 }) },
@@ -150,6 +151,10 @@ class SourcesTab extends React.Component<SourcesTabProps, SourcesTabState> {
 
     onFetchFrequencyChange = (_, option: IDropdownOption) => {
         let frequency = parseInt(option.key as string)
+        
+        // 添加日志输出
+        console.log("Fetch frequency changed to:", frequency)
+    
         this.props.updateFetchFrequency(this.state.selectedSource, frequency)
         this.setState({
             selectedSource: {
@@ -157,6 +162,9 @@ class SourcesTab extends React.Component<SourcesTabProps, SourcesTabState> {
                 fetchFrequency: frequency,
             } as RSSSource,
         })
+    
+        // 添加日志输出
+        console.log("State updated with new fetch frequency:", this.state.selectedSource)
     }
 
     sourceOpenTargetChoices = (): IChoiceGroupOption[] => [
