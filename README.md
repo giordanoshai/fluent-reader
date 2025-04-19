@@ -38,7 +38,8 @@ The repo of the mobile version of this app [can be found here](https://github.co
 - Single-key [keyboard shortcuts](https://github.com/yang991178/fluent-reader/wiki/Support#keyboard-shortcuts).
 - Hide, mark as read, or star articles automatically as they arrive with regular expression rules.
 - Fetch articles in the background and send push notifications.
-
+- Add 1m to fetch rss source.
+- Audio notification when new feed.
 Support for other RSS services are [under fundraising](https://github.com/yang991178/fluent-reader/issues/23). 
 
 ## Development
